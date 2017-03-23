@@ -65,9 +65,11 @@
 - (void)viewDidDisappear:(BOOL)animated{
   [super viewDidDisappear:animated];
   
-  _conferenceClient = nil;
   [getStatsTimer invalidate];
   getStatsTimer = nil;
+  _conferenceClient = nil;
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
+  [self.view removeFromSuperview];
   
 }
 
@@ -176,8 +178,8 @@
     //    设置要使用的相机的ID。 前置和后置摄像头
     [parameters setCameraId:cameraId];
     //设置视频分辨率
-    //    [parameters setResolutionWidth:1280 height:720];
-    [parameters setResolutionWidth:1920 height:1080];
+//        [parameters setResolutionWidth:1280 height:720];
+            [parameters setResolutionWidth:640 height:480];
     /* Create LocalCameraStream with capturer instance */
     /*
      NSDictionary *mandatoryConstraints = @{@"minWidth" : @"1280", @"minHeight" : @"720",@"maxWidth" : @"1280", @"maxHeight" : @"720", @"maxFrameRate":@"24", @"minFrameRate":@"15"};
@@ -236,9 +238,8 @@
         height = format.resolution.height;
       }
     }
-    subOption.videoQualityLevel = RTCConferenceVideoQualityLevelBestSpeed;
+    subOption.videoQualityLevel = RTCConferenceVideoQualityLevelBestQuality;
     [subOption setResolution:CGSizeMake(width, height)];
-    //    [subOption setResolution:CGSizeMake(1920, 1080)];
     // 边录边播
     [[AVAudioSession sharedInstance]overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
     

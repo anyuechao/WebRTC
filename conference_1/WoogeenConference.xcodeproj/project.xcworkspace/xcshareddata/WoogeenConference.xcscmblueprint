@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "73D5CA1D46B76611D356B8290ED237BC685AAA94",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "53F66E9C52DE9F6D6AAB9F5C0A556C6CBA957EE4" : 9223372036854775807,
+    "73D5CA1D46B76611D356B8290ED237BC685AAA94" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "457AF4EF-8413-49C4-9C4C-774A4BEF1E08",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "53F66E9C52DE9F6D6AAB9F5C0A556C6CBA957EE4" : "..",
+    "73D5CA1D46B76611D356B8290ED237BC685AAA94" : "samples\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "WoogeenConference",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "conference_1\/WoogeenConference.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/anyuechao\/WebRTC.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "53F66E9C52DE9F6D6AAB9F5C0A556C6CBA957EE4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/anyuechao\/WebRTC.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "73D5CA1D46B76611D356B8290ED237BC685AAA94"
+    }
+  ]
+}

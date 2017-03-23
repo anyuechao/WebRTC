@@ -71,9 +71,13 @@
   self.view= _streamView;
 }
 
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
+- (void)viewDidDisappear:(BOOL)animated {
+  [super viewDidDisappear:animated];
+  [getStatsTimer invalidate];
+  getStatsTimer = nil;
+  _conferenceClient = nil;
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
+  [self.view removeFromSuperview];
 }
 
 - (void)enableFrameFilter{
@@ -139,7 +143,7 @@
       height = format.resolution.height;
     }
   }
-  subOption.videoQualityLevel = RTCConferenceVideoQualityLevelBestSpeed;
+  subOption.videoQualityLevel = RTCConferenceVideoQualityLevelBestQuality;
   [subOption setResolution:CGSizeMake(width, height)];
   [[AVAudioSession sharedInstance]overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
   [self.conferenceClient subscribe:appDelegate.mixedStream withOptions:subOption onSuccess:^(RTCRemoteStream *remoteStream) {
@@ -208,7 +212,8 @@
     NSAssert(cameraId, @"Unable to get the front camera id");
     NSLog(@"Camera ID: %@",cameraId);
     [parameters setCameraId:cameraId];
-    [parameters setResolutionWidth:1280 height:720];
+//    [parameters setResolutionWidth:1280 height:720];
+        [parameters setResolutionWidth:640 height:480];
     /* Create LocalCameraStream with capturer instance */
     /*
      NSDictionary *mandatoryConstraints = @{@"minWidth" : @"1920", @"minHeight" : @"1080",@"maxWidth" : @"1920", @"maxHeight" : @"1080", @"maxFrameRate":@"24", @"minFrameRate":@"15"};
